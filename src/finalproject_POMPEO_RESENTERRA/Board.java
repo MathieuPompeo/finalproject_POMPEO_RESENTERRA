@@ -40,23 +40,68 @@ static Square[][] board;
 				}
 			}
 		}
-	while(board[size-1][0].getState()==board[0][size-1].getState()){ // Pas fini
-			System.out.println("test");
-			nbtest = 1 + (int)(Math.random() * ((6 - 1) + 1));
-			switch (nbtest) {
-			case 1:
-				setSquareState(0, size-1,SquareState.RED);
-			case 2:
-				setSquareState(0, size-1,SquareState.ORANGE);
-			case 3:
-				setSquareState(0, size-1,SquareState.YELLOW);
-			case 4:
-				setSquareState(0, size-1,SquareState.GREEN);
-			case 5:
-				setSquareState(0, size-1,SquareState.BLUE);
-			case 6:
-				setSquareState(0, size-1,SquareState.PURPLE);
-		}
+	while(board[size-1][0].getState()==board[0][size-1].getState()
+			|| board[size-1][0].getState()==board[size-1][size-1].getState()
+			|| board[size-1][0].getState()==board[0][0].getState()
+			|| board[0][0].getState()==board[size-1][size-1].getState()
+			|| board[0][0].getState()==board[0][size-1].getState()
+			|| board[0][size-1].getState()==board[size-1][size-1].getState()){ 
+			setSquareState(0, size-1,SquareState.RED);
+			setSquareState(0, 0,SquareState.BLUE);
+			setSquareState(size-1, size-1,SquareState.ORANGE);
+			setSquareState(size-1, 0,SquareState.PURPLE);
+		
+		// Mode Aléatoire
+//			nbtest = 1 + (int)(Math.random() * ((6 - 1) + 1));
+//			System.out.println(nbtest);
+//			switch (nbtest) {
+//			case 1:
+//				setSquareState(0, size-1,SquareState.RED);
+//			case 2:
+//				setSquareState(0, size-1,SquareState.ORANGE);
+//			case 3:
+//				setSquareState(0, size-1,SquareState.YELLOW);
+//			case 4:
+//				setSquareState(0, size-1,SquareState.GREEN);
+//			case 5:
+//				setSquareState(0, size-1,SquareState.BLUE);
+//			case 6:
+//				setSquareState(0, size-1,SquareState.PURPLE);
+//			}
+//			
+//			int nbtest2 = 1 + (int)(Math.random() * ((6 - 1) + 1));
+//			System.out.println(nbtest2);
+//			switch (nbtest2) {
+//			case 1:
+//				setSquareState(0, 0,SquareState.RED);
+//			case 2:
+//				setSquareState(0, 0,SquareState.ORANGE);
+//			case 3:
+//				setSquareState(0, 0,SquareState.YELLOW);
+//			case 4:
+//				setSquareState(0, 0,SquareState.GREEN);
+//			case 5:
+//				setSquareState(0, 0,SquareState.BLUE);
+//			case 6:
+//				setSquareState(0, 0,SquareState.PURPLE);
+//			}
+//			
+//			int nbtest3 = 1 + (int)(Math.random() * ((6 - 1) + 1));
+//			System.out.println(nbtest3);
+//			switch (nbtest3) {
+//			case 1:
+//				setSquareState(size-1, size-1,SquareState.RED);
+//			case 2:
+//				setSquareState(size-1, size-1,SquareState.ORANGE);
+//			case 3:
+//				setSquareState(size-1, size-1,SquareState.YELLOW);
+//			case 4:
+//				setSquareState(size-1, size-1,SquareState.GREEN);
+//			case 5:
+//				setSquareState(size-1, size-1,SquareState.BLUE);
+//			case 6:
+//				setSquareState(size-1, size-1,SquareState.PURPLE);
+//			}
 	}
 	
 	// On gère les obstacles : 
